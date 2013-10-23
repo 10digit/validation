@@ -1,0 +1,14 @@
+{
+    "name": "validation",
+    "version": "0.0.0",
+    "main": "./validation.js",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components"
+    ],
+    "dependencies": {
+        "angular": "*",
+        "10digit/utils": "~0.0.0"
+    }
+}
