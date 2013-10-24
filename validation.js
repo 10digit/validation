@@ -1,16 +1,20 @@
 angular.module('10digit.validation', ['10digit.utils']);
 
 function tendigitvalidation_applyAsterisk(elm){
-	var label = (elm.prev('label').length > 0) ? elm.prev('label') : elm.parent('label');
+    $(document).ready(function(){
+        var label = (elm.prev('label').length > 0) ? elm.prev('label') : elm.parent('label');
 
-	if(label.find('.asterisk').length == 0)
-		label.append('<span class="asterisk">*</span>');
+        if(label.find('.asterisk').length == 0)
+            label.append('<span class="asterisk">*</span>');
+    });
 }
 
 function tendigitivalidation_removeAsterisk(elm){
-	var label = (elm.prev('label').length > 0) ? elm.prev('label') : elm.parent('label');
+    $(document).ready(function(){
+        var label = (elm.prev('label').length > 0) ? elm.prev('label') : elm.parent('label');
 
-	label.find('.asterisk').remove();
+        label.find('.asterisk').remove();
+    });
 }
 
 angular.module('10digit.validation')
@@ -200,18 +204,20 @@ angular.module('10digit.validation')
 		restrict: 'A',
 		link: function($scope, elm, attrs){
 			var form = $scope[attrs.scrollToErrors];
-
-			elm.click(function(){
-				if(form.$invalid){
-					setTimeout(function(){
-						if($('.alert-error').filter(':visible').length != 0){
-							$('html, body').animate({
-								scrollTop: $('.alert-error').filter(':visible').offset().top - 65
-							}, 500);
-						}
-					}, 50);
-				}
-			});
+            
+            $(document).ready(function(){
+                elm.click(function(){
+                    if(form.$invalid){
+                        setTimeout(function(){
+                            if($('.alert-error').filter(':visible').length != 0){
+                                $('html, body').animate({
+                                    scrollTop: $('.alert-error').filter(':visible').offset().top - 65
+                                }, 500);
+                            }
+                        }, 50);
+                    }
+                });
+            });
 		}
 	}
 });
