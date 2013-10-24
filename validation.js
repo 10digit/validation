@@ -1,22 +1,17 @@
 angular.module('10digit.validation', ['10digit.utils']);
 
 function tendigitvalidation_applyAsterisk(elm){
-    $(document).ready(function(){
-        var elm = $(elm);
-        var label = (elm.prev('label').length > 0) ? elm.prev('label') : elm.parent('label');
+    var label = (elm.prev('label').length > 0) ? elm.prev('label') : elm.parent('label');
 
-        if(label.find('.asterisk').length == 0)
-            label.append('<span class="asterisk">*</span>');
-    });
+    if(label.find('.asterisk').length == 0)
+        label.append('<span class="asterisk">*</span>');
 }
 
 function tendigitivalidation_removeAsterisk(elm){
-    $(document).ready(function(){
-        var elm = $(elm);
-        var label = (elm.prev('label').length > 0) ? elm.prev('label') : elm.parent('label');
+    var elm = $(elm);
+    var label = (elm.prev('label').length > 0) ? elm.prev('label') : elm.parent('label');
 
-        label.find('.asterisk').remove();
-    });
+    label.find('.asterisk').remove();
 }
 
 angular.module('10digit.validation')
@@ -209,7 +204,6 @@ angular.module('10digit.validation')
 
             elm.click(function(){
                 if(form.$invalid){
-                    console.log('form is invalid');
                     setTimeout(function(){
                         if($('.alert-error').filter(':visible').length != 0){
                             $('html, body').animate({
