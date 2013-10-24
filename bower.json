@@ -1,6 +1,6 @@
 {
     "name": "10digit-validation",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "main": "./validation.js",
     "ignore": [
         "**/.*",
@@ -8,8 +8,8 @@
         "bower_components"
     ],
     "dependencies": {
-        "angular": "*",
         "jquery":"*",
+        "angular": "*",
         "10digit-utils": "*"
     }
 }

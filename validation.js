@@ -206,20 +206,18 @@ angular.module('10digit.validation')
 		restrict: 'A',
 		link: function($scope, elm, attrs){
 			var form = $scope[attrs.scrollToErrors];
-            
-            $(document).ready(function(){
-                var elm = $(elm);
-                elm.click(function(){
-                    if(form.$invalid){
-                        setTimeout(function(){
-                            if($('.alert-error').filter(':visible').length != 0){
-                                $('html, body').animate({
-                                    scrollTop: $('.alert-error').filter(':visible').offset().top - 65
-                                }, 500);
-                            }
-                        }, 50);
-                    }
-                });
+
+            elm.click(function(){
+                if(form.$invalid){
+                    console.log('form is invalid');
+                    setTimeout(function(){
+                        if($('.alert-error').filter(':visible').length != 0){
+                            $('html, body').animate({
+                                scrollTop: $('.alert-error').filter(':visible').offset().top - 65
+                            }, 500);
+                        }
+                    }, 50);
+                }
             });
 		}
 	}
