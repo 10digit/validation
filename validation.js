@@ -1,5 +1,3 @@
-angular.module('10digit.validation', ['10digit.utils']);
-
 function tendigitvalidation_applyAsterisk(elm){
     var label = (elm.prev('label').length > 0) ? elm.prev('label') : elm.parent('label');
 
@@ -14,7 +12,7 @@ function tendigitivalidation_removeAsterisk(elm){
     label.find('.asterisk').remove();
 }
 
-angular.module('10digit.validation')
+angular.module('10digit.validation', ['10digit.utils'])
 
 .directive('required', function(){
 	return {
